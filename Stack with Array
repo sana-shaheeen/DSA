@@ -1,0 +1,70 @@
+  #include <iostream>
+using namespace std;
+
+int TOP = -1;
+const int MAX_SIZE= 10;
+int array[MAX_SIZE];
+
+void push(int data){
+    if (TOP >= MAX_SIZE){
+        cout<< "\n\tOVERFLOW\t\n";
+    } else {
+        TOP++;
+        array[TOP] = data;
+        cout << "\nThe push data is : "<<data;
+    }
+}
+
+void pop(){
+    if (TOP == -1){
+        cout << "\n\tUNDERFLOW\t\n";
+    } else {
+        cout << "\nThe pop data is : "<<array[TOP];
+        TOP--;
+    }
+}
+
+void peek(){
+    if (TOP== -1){
+        cout<<"\n\tNOTHING in the Queue\t\n";
+    } else {
+        cout<<"\n\nThe data at the top of the Stack is : "<< array[TOP]<<"\n";
+    }
+}
+void isEmpty(){
+    if (TOP == -1){
+        cout << "\n\n\tThe Queue is empty\t\n";
+    } else {
+        cout << "\n\n\tThe Queue is not empty\t\n";
+    }
+}
+void isFull(){
+    if (TOP >= MAX_SIZE){
+        cout << "\n\n\tThe Queue is Full\t\n";
+    } else {
+        cout << "\n\n\tThe Queue is not Empty\n\t";
+    }
+}
+
+int main() {
+    pop();
+    push(12);
+    push(22);
+    push(33);
+    pop();
+    push(44);
+    push(55);
+    push(11);
+    peek();
+    push(78);
+    push(23);
+    push(55);
+    push(66);
+    push(7);
+    isEmpty();
+    push(56);
+    isFull();
+    push(57);
+
+    return 0;
+}
